@@ -44,15 +44,15 @@ export default function QuestionDetail() {
 
                 <Grid container spacing={2}>
                     <Grid xs={9}>
-
                         <Box sx={{p: 2}}>
                             <QuestionContent
                                 description = {content.description}
                                 tag = {content.tag}
                             />
+                            <Divider />
                             <Box>
                                 <Typography variant="h6" sx={{py:1}}>
-                                    Share Your Answer
+                                    Comments
                                 </Typography>
                                 <Editor/>
                                 <Button variant="contained" color="primary" sx={{my:2, py:1}}>Post Answer</Button>
