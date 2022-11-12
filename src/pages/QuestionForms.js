@@ -19,7 +19,6 @@ import {
 import {db} from '../firebase'
 import {collection, addDoc, Timestamp} from 'firebase/firestore'
 
-
 const theme = createTheme({
     palette: {
         primary: {
@@ -48,7 +47,7 @@ export default function QuestionForms() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            console.log('Submit test');
+            console.log('Submit test:');
             console.log(title);
             console.log(description);
             console.log(tag);
