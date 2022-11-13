@@ -1,0 +1,36 @@
+.bar{
+    box-shadow: 0px 4px 4px #F1F1F1;
+    border-radius: 0px;
+    font-size: 1.3rem ;
+}
+
+.loginButton{
+    color: #6A79A6;
+    border: 2px solid #6A79A6;
+    margin-right: 1rem;
+    width: 6rem;
+}
+
+.signupButton{
+    background-color: #6A79A6;
+    border: 2px solid #6A79A6;
+    width: 6rem;
+}
+
+.logoutButton{
+    color: #6A79A6;
+    border: 2px solid #6A79A6;
+    margin-left: 2rem;
+    width: 6rem;
+    font-size: large;
+}
+
+.signupButton:hover{
+    background-color: #363F59;
+    border-color: #363F59;
+}
+.loginButton:hover{
+    background-color: #6A79A6;
+    border-color: #6A79A6;
+    
+}

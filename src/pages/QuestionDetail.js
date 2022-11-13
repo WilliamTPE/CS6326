@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {Box, Button, Container, Typography, Grid, Divider, Stack} from "@mui/material";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
-import {Link, useParams} from 'react-router-dom';
-import {db} from '../firebase';
+import {Link, useParams,useNavigate} from 'react-router-dom';
+import {db} from '../firebaseSetup/firebase';
 import {doc, onSnapshot, collection, addDoc, Timestamp, query, orderBy, limit, where} from "firebase/firestore";
 import QuestionContent from "../component/QuestionContent";
 import ReactQuill from "react-quill";
@@ -17,7 +17,7 @@ const theme = createTheme({
 });
 
 export default function QuestionDetail() {
-
+    let navigate = useNavigate();
     const {id} = useParams();
     const [content, setContent] = useState([]);
     const [comment, setComment] = useState('');
@@ -79,9 +79,18 @@ export default function QuestionDetail() {
         ]
     };
 
+    function goBack(){
+        navigate('/forum')
+    }
+
     return (
         <ThemeProvider theme={theme}>
-            <Container>
+            <Container style={{marginTop:'3rem', marginBottom:'30rem'}}>
+            <Grid container spacing={2} >
+            <Grid xs={2}>
+                <Button variant="contained" color="primary" onClick={goBack}>Go Back</Button>
+            </Grid>
+            <Grid xs={10}>
                 <Box display="grid" sx={{display: "flex", m: 2}}>
                     <Typography variant="h4" sx={{flexGrow: 1}}>{content.title}</Typography>
                     <Link to={"/question/ask"} style={{textDecoration: 'none'}}>
@@ -140,7 +149,11 @@ export default function QuestionDetail() {
                         </Box>
                     </Grid>
                 </Grid>
+            </Grid>
+            </Grid>
             </Container>
         </ThemeProvider>
     );
 }
+
+

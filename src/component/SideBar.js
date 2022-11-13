@@ -1,9 +1,9 @@
 import {Box, Typography, Stack, Chip} from "@mui/material";
 import React, {useEffect, useState} from "react";
-import {Button} from "react-bootstrap";
+import {Button} from  "@mui/material";
 import {Link, useNavigate} from "react-router-dom";
 import {collection, query, orderBy, onSnapshot, limit} from "firebase/firestore";
-import {db} from '../firebase';
+import {db} from '../firebaseSetup/firebase';
 
 export default function SideBar() {
     const [questions, setQuestions] = useState([]);
@@ -27,7 +27,7 @@ export default function SideBar() {
     return (
         <Box sx={{P: 1}}>
             <Box sx={{p: 2}}>
-                <Button className="goBackButton" onClick={goBack}>Go Back</Button>
+                <Button variant="contained" color="primary" onClick={goBack}>Go Back</Button>
             </Box>
             <Box sx={{p: 2}}>
                 <Typography variant="h6" gutterBottom>

@@ -1,0 +1,55 @@
+.main-footer{
+    /* background: #FFFFFF; */
+    box-shadow: 0px -4px 4px #F1F1F1;
+    border-radius: 0px;
+    /* margin-top: 2rem; */
+}
+
+/* .row{
+    width: 100%;
+} */
+
+.buy{
+    font-family: 'Inter'; 
+    font-style: normal;
+    color: #678398;
+    font-size: 18px;
+}
+
+li{
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.list-item-text{
+    text-decoration: none;
+    color: #678398;
+    font-family: 'Inter';
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.footer-text-head{
+    margin-top: 1rem;
+    color: #678398;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.img-footer-logo{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+li img{
+    margin-right: 2rem;
+}
+
+.footer-bottom{
+    color: #678398;
+}

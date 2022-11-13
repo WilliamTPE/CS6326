@@ -16,7 +16,7 @@ import {
     AccordionSummary,
     AccordionDetails
 } from "@mui/material";
-import {db} from '../firebase';
+import {db} from '../firebaseSetup/firebase';
 import {collection, addDoc, Timestamp} from 'firebase/firestore';
 
 const theme = createTheme({
@@ -56,16 +56,70 @@ export default function QuestionForms() {
                 tag: tag,
                 created: Timestamp.now()
             });
-            navigate('/');
+            navigate('/forum');
         } catch (err){
             alert(err)
         }
     }
-
+    function goBack(){
+        navigate('/forum')
+    }
     return (
         <ThemeProvider theme={theme}>
-            <Container maxWidth="lg" sx={{my:3}}>
+            <Container maxWidth="lg" sx={{my:3}} style={{marginTop:'3rem', marginBottom:'30rem'}}>
                 <Grid container spacing={6}>
+                <Grid xs={4} item>
+                    <Button variant="contained" color="primary" onClick={goBack} style={{marginBottom:'2rem'}}>Go Back</Button>
+                        <Accordion>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon/>}
+                                aria-controls="panel1a-content"
+                                id="panel1a-header"
+                            >
+                                <Typography>Summarize the question</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    <ul>
+                                        <li>Include details about your goal</li>
+                                        <li>Describe expected</li>
+                                    </ul>
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                        <Accordion>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon/>}
+                                aria-controls="panel2a-content"
+                                id="panel2a-header"
+                            >
+                                <Typography>Describe what you've tried</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    <ul>
+                                        <li>Include details about Describe what you've tried</li>
+                                    </ul>
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                        <Accordion>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon/>}
+                                aria-controls="panel3a-content"
+                                id="panel3a-header"
+                            >
+                                <Typography>Share some thoughts</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    <ul>
+                                        <li>Share some thoughts</li>
+                                    </ul>
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                    </Grid>
                     <Grid xs={8} item>
                         <form onSubmit={handleSubmit} name='addQuestion'>
                             <Box display="grid" sx={{display: "flex"}}>
@@ -153,57 +207,7 @@ export default function QuestionForms() {
                             </Box>
                         </form>
                     </Grid>
-                    <Grid xs={4} item>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon/>}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                            >
-                                <Typography>Summarize the question</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    <ul>
-                                        <li>Include details about your goal</li>
-                                        <li>Describe expected</li>
-                                    </ul>
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon/>}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                            >
-                                <Typography>Describe what you've tried</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    <ul>
-                                        <li>Include details about Describe what you've tried</li>
-                                    </ul>
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon/>}
-                                aria-controls="panel3a-content"
-                                id="panel3a-header"
-                            >
-                                <Typography>Share some thoughts</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    <ul>
-                                        <li>Share some thoughts</li>
-                                    </ul>
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                    </Grid>
+                    
                 </Grid>
             </Container>
         </ThemeProvider>

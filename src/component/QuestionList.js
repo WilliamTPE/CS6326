@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Box, Button, Typography, Pagination, Divider} from "@mui/material";
 import {collection, query, orderBy, onSnapshot} from "firebase/firestore";
-import {db} from '../firebase';
+import {db} from '../firebaseSetup/firebase';
 import QuestionBox from "./QuestionBox";
 import { Link } from "react-router-dom";
 
