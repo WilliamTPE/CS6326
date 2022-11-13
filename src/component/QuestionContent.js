@@ -2,7 +2,7 @@ import React from "react";
 import {Box, Chip, Stack, Typography} from "@mui/material";
 
 export default function QuestionContent({description, tag}) {
-    console.log(tag);
+    
     let itemToRender;
     if(tag){
         itemToRender = tag.map( tag => {

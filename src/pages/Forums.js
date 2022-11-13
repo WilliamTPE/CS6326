@@ -20,11 +20,11 @@ export default function Forum() {
         <ThemeProvider theme={theme}>
             <Container>
                 <Grid container spacing={2}>
-                    <Grid xs={9}>
-                        <QuestionList />
-                    </Grid>
                     <Grid xs={3}>
                         <SideBar />
+                    </Grid>
+                    <Grid xs={9}>
+                        <QuestionList />
                     </Grid>
                 </Grid>
             </Container>

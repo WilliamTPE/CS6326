@@ -40,7 +40,6 @@ export default function QuestionList() {
                     description = {question.data.description}
                     tag = {question.data.tag}
                 />
-
             ))}
 
             <Box sx={{p:3, justifyContent: 'center', display: 'flex',}}>

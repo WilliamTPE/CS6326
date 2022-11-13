@@ -16,8 +16,8 @@ import {
     AccordionSummary,
     AccordionDetails
 } from "@mui/material";
-import {db} from '../firebase'
-import {collection, addDoc, Timestamp} from 'firebase/firestore'
+import {db} from '../firebase';
+import {collection, addDoc, Timestamp} from 'firebase/firestore';
 
 const theme = createTheme({
     palette: {
@@ -50,10 +50,6 @@ export default function QuestionForms() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            console.log('Submit test:');
-            console.log(title);
-            console.log(description);
-            console.log(tag);
             await addDoc(collection(db, 'questions'),{
                 title: title,
                 description: description,
