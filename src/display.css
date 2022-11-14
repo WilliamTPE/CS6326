@@ -12,10 +12,16 @@
 }
 .goBackButton{
     background-color: #293969;
+    border-color: #293969;
     width: 7rem;
 }
 .goBackButton:hover{
-    background-color: #6A79A6;
+    background-color: #293969;
+    border-color: #293969;
+}
+.goBackButton:active{
+    background-color: #293969 !important;
+    border-color: #293969 !important;
 }
 .shortcut {
     display: flex;

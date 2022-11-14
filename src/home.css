@@ -42,7 +42,9 @@
     background-color: #293969;
     color: white;
 }
-
+.search:active{
+    background-color: #293969 !important;
+}
 .inspec {
     color: #000000;
     font-style: normal;
@@ -74,6 +76,7 @@
 
 .download:hover{
     background-color: #293969;
+    border-color: #293969 ; 
     color: white;
 }
 
@@ -104,7 +107,9 @@
     background-color: #293969;
     color: white;
 }
-
+.askbutton:active{
+    background-color: #293969 !important;
+}
 .q {
     font-style: normal;
     font-weight: 700;

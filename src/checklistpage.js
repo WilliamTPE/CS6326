@@ -63,6 +63,8 @@ function CheckListPage(){
     // console.log(checkListContent)
     function resetClick(){
         setDisplayList(defaultList)
+        setValue1("Select")
+        setValue2("Select")
     }
     function clickDownload(e){
         alert("Download Successful!")

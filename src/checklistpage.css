@@ -40,7 +40,12 @@
 }
 .searchButton:hover{
     background-color: #293969;
+    border-color: #293969;
     color: white;
+}
+.searchButton:active{
+    background-color: #293969 !important;
+    border-color: #293969 !important;
 }
 .resetButton{
     margin-top: 1rem;
@@ -50,5 +55,10 @@
 }
 .resetButton:hover{
     background-color: #293969;
+    border-color: #293969;
     color: white;
+}
+.resetButton:active{
+    background-color: #293969 !important;
+    border-color: #293969 !important;
 }
