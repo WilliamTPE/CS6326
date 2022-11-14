@@ -9,7 +9,7 @@ export default function QuestionBox({id, title, description, tag}) {
     return (
         <Box sx={{m:2}}>
             <Link to={"/question/"+id} style={{color: 'inherit', textDecoration: 'inherit'}}>
-                <Typography variant="h4" gutterBottom>{title}</Typography>
+                <Typography sx={{typography: { sm: 'h4', xs: 'h5' }, mb:1}}>{title}</Typography>
             </Link>
             <Typography variant="body1" gutterBottom>{data.slice(0, 250)}</Typography>
             <Stack direction="row" spacing={1}>

@@ -5,11 +5,10 @@ export default function CommentContent({comment}){
     return (
         <Box sx={{m:1}}>
             <Card variant="outlined">
-                <Typography variant="body1" sx={{px:2}}>
+                <Typography variant="body1" sx={{p:2}}>
                     <div dangerouslySetInnerHTML={{__html: comment}}></div>
                 </Typography>
             </Card>
-
         </Box>
     );
 }

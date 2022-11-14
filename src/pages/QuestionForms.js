@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {createTheme, ThemeProvider} from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ReactQuill, { Quill } from "react-quill";
 import { useNavigate } from "react-router-dom";
@@ -16,8 +16,8 @@ import {
     AccordionSummary,
     AccordionDetails
 } from "@mui/material";
-import {db} from '../firebaseSetup/firebase';
-import {collection, addDoc, Timestamp} from 'firebase/firestore';
+import { db } from '../firebaseSetup/firebase';
+import { collection, addDoc, Timestamp } from 'firebase/firestore';
 
 const theme = createTheme({
     palette: {
@@ -50,29 +50,29 @@ export default function QuestionForms() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            await addDoc(collection(db, 'questions'),{
+            await addDoc(collection(db, 'questions'), {
                 title: title,
                 description: description,
                 tag: tag,
                 created: Timestamp.now()
             });
             navigate('/forum');
-        } catch (err){
+        } catch (err) {
             alert(err)
         }
     }
-    function goBack(){
+    function goBack() {
         navigate('/forum')
     }
     return (
         <ThemeProvider theme={theme}>
-            <Container maxWidth="lg" sx={{my:3}} style={{marginTop:'3rem', marginBottom:'30rem'}}>
-                <Grid container spacing={6}>
-                <Grid xs={4} item>
-                    <Button variant="contained" color="primary" onClick={goBack} style={{marginBottom:'2rem'}}>Go Back</Button>
+            <Container maxWidth="lg" sx={{ my: 3 }} style={{ marginTop: '3rem', marginBottom: '30rem' }}>
+                <Grid container spacing={{xs:2, md:3}} columns={{xs:4, sm:8, md:12}}>
+                    <Grid item xs={4}>
+                        <Button variant="contained" color="primary" onClick={goBack} style={{ marginBottom: '2rem' }}>Go Back</Button>
                         <Accordion>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon/>}
+                                expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
@@ -89,7 +89,7 @@ export default function QuestionForms() {
                         </Accordion>
                         <Accordion>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon/>}
+                                expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel2a-content"
                                 id="panel2a-header"
                             >
@@ -105,7 +105,7 @@ export default function QuestionForms() {
                         </Accordion>
                         <Accordion>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon/>}
+                                expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel3a-content"
                                 id="panel3a-header"
                             >
@@ -120,10 +120,10 @@ export default function QuestionForms() {
                             </AccordionDetails>
                         </Accordion>
                     </Grid>
-                    <Grid xs={8} item>
+                    <Grid item xs={8}>
                         <form onSubmit={handleSubmit} name='addQuestion'>
-                            <Box display="grid" sx={{display: "flex"}}>
-                                <Typography variant="h4" sx={{flexGrow: 1}}>
+                            <Box display="grid" sx={{ display: "flex" }}>
+                                <Typography sx={{ flexGrow: 1, typography: { sm: 'h4', xs: 'h5' } }}>
                                     Ask a question
                                 </Typography>
                                 <Button
@@ -144,7 +144,7 @@ export default function QuestionForms() {
                                     borderRadius: 2
                                 }}
                             >
-                                <Box sx={{my: 1}}>
+                                <Box sx={{ my: 1 }}>
                                     <Typography variant="h6" gutterBottom>
                                         Title
                                     </Typography>
@@ -158,7 +158,7 @@ export default function QuestionForms() {
                                         onChange={(e) => setTitle(e.target.value)}
                                     />
                                 </Box>
-                                <Box sx={{my: 1}}>
+                                <Box sx={{ my: 1 }}>
                                     <Typography variant="h6" gutterBottom>
                                         Body
                                     </Typography>
@@ -172,7 +172,7 @@ export default function QuestionForms() {
                                         onChange={setDescription}
                                     />
                                 </Box>
-                                <Box sx={{my: 1}}>
+                                <Box sx={{ my: 1 }}>
                                     <Typography variant="h6" gutterBottom>
                                         Tag
                                     </Typography>
@@ -189,7 +189,7 @@ export default function QuestionForms() {
                                                 <Chip
                                                     variant="outlined"
                                                     label={option}
-                                                    {...getTagProps({index})}
+                                                    {...getTagProps({ index })}
                                                 />
                                             ))
                                         }
@@ -201,13 +201,12 @@ export default function QuestionForms() {
                                             />
                                         )}
                                         value={tag}
-                                        onChange={(_event, newTag) => {setTag(newTag);}}
+                                        onChange={(_event, newTag) => { setTag(newTag); }}
                                     />
                                 </Box>
                             </Box>
                         </form>
                     </Grid>
-                    
                 </Grid>
             </Container>
         </ThemeProvider>
@@ -215,12 +214,12 @@ export default function QuestionForms() {
 }
 
 const top10tags = [
-    {title: "House"},
-    {title: "Garden"},
-    {title: "DIY"},
-    {title: "Floor"},
-    {title: "Pool"},
-    {title: "Pest"},
-    {title: "Paint"},
-    {title: "Wall"}
+    { title: "House" },
+    { title: "Garden" },
+    { title: "DIY" },
+    { title: "Floor" },
+    { title: "Pool" },
+    { title: "Pest" },
+    { title: "Paint" },
+    { title: "Wall" }
 ];
