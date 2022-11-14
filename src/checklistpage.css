@@ -22,7 +22,7 @@
     width: 80%;
 }
 
-.dropdown-toggle::after{
+.dropdown-toggle.btn.btn-primary::after{
     /* triangle */
     border-left: 0.5rem solid transparent;
     border-right: 0.5rem solid transparent;

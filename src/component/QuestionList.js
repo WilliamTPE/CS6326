@@ -42,9 +42,9 @@ export default function QuestionList() {
                 />
             ))}
 
-            <Box sx={{p:3, justifyContent: 'center', display: 'flex',}}>
+            {/* <Box sx={{p:3, justifyContent: 'center', display: 'flex',}}>
                 <Pagination count={10} />
-            </Box>
+            </Box> */}
         </Box>
     );
 }

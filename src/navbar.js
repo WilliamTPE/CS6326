@@ -1,18 +1,20 @@
-import React from "react";
 import Container from 'react-bootstrap/Container';
-import {Nav, Navbar, Button} from 'react-bootstrap';
-import { Link, NavLink, useNavigate} from 'react-router-dom';
+import { Nav, Navbar, Button } from 'react-bootstrap';
+import { Link, useNavigate, NavLink } from 'react-router-dom';
 import './navbar.css'
+import React from 'react';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function MyNavbar(props) {
   var navigate = useNavigate();
   var navbarRight = (
     <>
-    <Button className='loginButton' variant="outline-primary" href='/login'>Login</Button>{' '}
-    <Button className='signupButton' variant="primary" href='/signup'>Sign-up</Button>{' '}
+
+      <Button className='loginButton' variant="outline-primary" href='/login'>Login</Button>{' '}
+      <Button className='signupButton' variant="primary" href='/signup'>Sign-up</Button>{' '}
     </>
   )
-  if(props.isLogged){
+  if (props.isLogged) {
     navbarRight = (
       <>
         <Navbar.Text> Welcome, {props.userName} </Navbar.Text>
@@ -20,7 +22,7 @@ function MyNavbar(props) {
       </>
     )
   }
-  function setLogOut(){
+  function setLogOut() {
     // props.setLogIn(false)
     localStorage.clear();
     navigate('/');
@@ -31,37 +33,86 @@ function MyNavbar(props) {
       <Container>
         {/* <!--Insert Logo--> */}
         <Navbar.Brand>
-          <img className="img-responsive" width="50px" height="50px"  src="/img/logo.png" alt="a logo"/>
+          <img className="img-responsive" width="50px" height="50px" src="/img/logo.png" alt="a logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto" >
             <NavLink to='/' style={{
               color: '#678398',
               textDecoration: "none",
-              marginRight: "1rem"
+              marginRight: "1rem",
+              marginTop: "0.5rem"
             }}>Home</NavLink>
-            <NavLink to='/searchPictures' style={{
-              color: '#678398',
-              textDecoration: "none",
-              marginRight: "1rem"
-            }}>Pictures</NavLink>
+            
+            <NavDropdown title="Pictures" id="basic-nav-dropdown" >
+              <NavDropdown.Item >
+                <NavLink to='/searchPictures' style={{
+                  color: '#678398',
+                  textDecoration: "none",
+                  marginRight: "1rem",
+                  marginTop: "0.5rem"
+                }}>Search Pictures</NavLink></NavDropdown.Item>
+              <NavDropdown.Item >
+                <NavLink to='/upload' style={{
+                  color: '#678398',
+                  textDecoration: "none",
+                  marginRight: "1rem",
+                  marginTop: "0.5rem"
+                }}>Upload Pictures</NavLink>
+            </NavDropdown.Item>
+            </NavDropdown>
+
             <NavLink to='/checklist' style={{
               color: '#678398',
               textDecoration: "none",
-              marginRight: "1rem"
+              marginRight: "1rem",
+              marginTop: "0.5rem",
+              marginLeft: "1rem"
             }}>Check List</NavLink>
-            <NavLink to='/forum' style={{
+            
+            <NavDropdown title="Forum" id="basic-nav-dropdown" >
+              <NavDropdown.Item >
+                <NavLink to='/forum' style={{
+                  color: '#678398',
+                  textDecoration: "none",
+                  marginTop: "0.5rem"
+                }}>Forum</NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Item >
+                <NavLink to='/question/ask' style={{
+                  color: '#678398',
+                  textDecoration: "none",
+                  marginTop: "0.5rem"
+                }}>Ask a Question</NavLink>
+              </NavDropdown.Item>
+              
+
+            </NavDropdown>
+            {/* <NavLink href='/searchPictures' style={{
               color: '#678398',
               textDecoration: "none",
-            }}>Forum</NavLink>
+              marginRight: "1rem",
+              marginTop: "0.5rem"
+            }}>Pictures</NavLink>
+
+            <NavLink href='/' style={{
+              color: '#678398',
+              textDecoration: "none",
+              marginTop: "0.5rem"
+            }}>Forum</NavLink> */}
+
+
           </Nav>
           <Nav>
+            {/* <Navbar.Text> Welcome, Mark Otto </Navbar.Text> */}
+            {/* <Button className='loginButton' variant="outline-primary" href='/login'>Login</Button>{' '}
+            <Button className='signupButton' variant="primary" href='/signup'>Sign-up</Button>{' '} */}
             {navbarRight}
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </Navbar >
   );
 }
 

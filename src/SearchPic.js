@@ -28,8 +28,8 @@ export default function SearchPic(props) {
             tmp.added = true
             props.method(tmp)
         }
-
     }
+    data.sort((a, b) => a.addressLine1.localeCompare(b.addressLine1))
     // set display limit
     var pageLimit = 6;
 
@@ -108,7 +108,7 @@ export default function SearchPic(props) {
                 newdata.push(data[i])
             }
         }
-
+        newdata.sort((a, b) => a.addressLine1.localeCompare(b.addressLine1))
         var searchDisplay = []
         for(let i = 0; i < newdata.length; i++){
             curLevel.push(
@@ -139,7 +139,7 @@ export default function SearchPic(props) {
         <Container style={{marginBottom:'5rem'}}>
             <div className="toppart">
                 <h3 className="title">Find a House</h3>
-                <h6>What houses are you going to visit recently, reveal the real looking.</h6>
+                <h6>What houses are you going to visit recently, find out the real looking.</h6>
                 <div className="searchpart">
                     <input className='searchInput' type="text"
                         placeholder="Search for the address..."
@@ -150,7 +150,6 @@ export default function SearchPic(props) {
                     </input>
                     <img className='click-search' src="/img/searchbar.png" alt="a logo" onClick={handleSearch} />
                     <img className='cancel-search' src="/img/cross.png" alt="a logo" onClick={resetClick} />
-                    {/* <Button className='resetButton'  onClick={resetClick}>Clear Search</Button>{' '} */}
                 </div>
                 <h4 className="upload-word">Visited a house recently? Share your experience with others</h4>
                 <Link to='/Upload' className="link-upload" > &gt;&gt;&gt; Upload Review </Link>

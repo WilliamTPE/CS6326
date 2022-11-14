@@ -23,7 +23,7 @@ function CheckListPage(){
                 <tr key ={i+"+"+j}>
                     <td>{checkListContent[i].Type}</td>
                     <td>{checkListContent[i].Size[j]}</td>
-                    <td><a href="#a" onClick={clickDownload}>Download</a></td>
+                    <td><a href="./Home Inspection Checklist.pdf" onClick={clickDownload} download>Download</a></td>
                 </tr>
             )
             defaultList.push(curContent);
@@ -42,7 +42,7 @@ function CheckListPage(){
                     <tr key ={i+"+"+j}>
                         <td>{checkListContent[i].Type}</td>
                         <td>{checkListContent[i].Size[j]}</td>
-                        <td><a href="#a" onClick={clickDownload}>Download</a></td>
+                        <td><a href="./Home Inspection Checklist.pdf" onClick={clickDownload} download>Download</a></td>
                     </tr>
                 )
                 if(type === checkListContent[i].Type && size.includes(checkListContent[i].Size[j])){
@@ -65,7 +65,6 @@ function CheckListPage(){
         setDisplayList(defaultList)
     }
     function clickDownload(e){
-        e.preventDefault();
         alert("Download Successful!")
     }
 
@@ -73,7 +72,7 @@ function CheckListPage(){
     return(
         <Container className='listPageContainer'>
         <div className="row justify-content-center" >
-            <h2 className='list-heading' style={{marginTop:'4rem'} }> We provide specified checklist for variant homes. </h2>
+            <h2 className='list-heading' style={{marginTop:'4rem'} }> We provide specified self-check lists for variant homes. </h2>
             <h2 className='list-heading' > Please select your future home specification. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h2>
         </div>
         <div className="row justify-content-center" >

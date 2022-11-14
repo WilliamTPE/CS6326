@@ -8,15 +8,15 @@
         "description": "Pretty new"
     },
     {
-        "addressLine1": "2102 waterview parkway",
+        "addressLine1": "102 apple drive",
         "addressLine2": "",
         "type": "House",
         "size": 4000,
-        "picture" : ["/img/2.1.jpg","/img/2.2.jpg","/img/2.3.jpg","/img/2.4.jpg","/img/2.5.jpg","/img/2.3.jpg","/img/2.4.jpg","/img/2.5.jpg"],
+        "picture" : ["/img/3.3.jpg","/img/3.2.jpg","/img/2.3.jpg","/img/2.4.jpg","/img/2.5.jpg","/img/2.3.jpg","/img/2.4.jpg","/img/2.5.jpg"],
         "description": "Love decoration, property looks pretty good"
     },
     {
-        "addressLine1": "2500 waterview parkway",
+        "addressLine1": "502 main street",
         "addressLine2": "",
         "type": "House",
         "size": 3000,
@@ -24,7 +24,7 @@
         "description": "House inside its perfect, but outside looks old"
     },
     {
-        "addressLine1": "2400 waterview parkway",
+        "addressLine1": "2400 beta road",
         "addressLine2": "",
         "type": "Apartment",
         "size": 1000,
@@ -32,15 +32,15 @@
         "description": "sample description"
     },
     {
-        "addressLine1": "2500 waterview parkway",
+        "addressLine1": "2502 heaven road",
         "addressLine2": "",
         "type": "House",
         "size": 3000,
-        "picture" :  ["/img/3.1.jfif","/img/3.2.jpg","/img/3.3.jpg","/img/3.4.jpg","/img/3.5.jpg","/img/3.3.jpg","/img/3.3.jpg","/img/3.4.jpg","/img/3.5.jpg"],
+        "picture" :  ["/img/4.2.jpg","/img/3.2.jpg","/img/3.3.jpg","/img/3.4.jpg","/img/3.5.jpg","/img/3.3.jpg","/img/3.3.jpg","/img/3.4.jpg","/img/3.5.jpg"],
         "description": "sample description"
     },
     {
-        "addressLine1": "2100 waterview parkway",
+        "addressLine1": "2180 orange street",
         "addressLine2": "",
         "type": "House",
         "size": 8000,
@@ -48,7 +48,7 @@
         "description": "sample description"
     },
     {
-        "addressLine1": "2102 waterview parkway",
+        "addressLine1": "2102 peach drive",
         "addressLine2": "",
         "type": "House",
         "size": 4000,
@@ -56,7 +56,7 @@
         "description": "Love decoration, property looks pretty good"
     },
     {
-        "addressLine1": "2500 waterview parkway",
+        "addressLine1": "2510 food street",
         "addressLine2": "",
         "type": "House",
         "size": 3000,
