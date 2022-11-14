@@ -15,16 +15,20 @@
     background-color: #6A79A6;
     border: 2px solid #6A79A6;
     width: 6rem;
+
 }
 
 .logoutButton{
-    color: #6A79A6;
+    background-color: #6A79A6;
     border: 2px solid #6A79A6;
     margin-left: 2rem;
-    width: 6rem;
-    font-size: large;
+    
 }
-
+.logoutButton:hover{
+    background-color: #6A79A6;
+    border-color: #6A79A6;
+    
+}
 .signupButton:hover{
     background-color: #363F59;
     border-color: #363F59;

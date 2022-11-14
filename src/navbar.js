@@ -18,12 +18,11 @@ function MyNavbar(props) {
     navbarRight = (
       <>
         <Navbar.Text> Welcome, {props.userName} </Navbar.Text>
-        <Button className='logoutButton' variant="outline-primary" onClick={setLogOut}>Log out</Button>{' '}
+        <Button className='logoutButton' variant="primary" onClick={setLogOut}>Log out</Button>{' '}
       </>
     )
   }
   function setLogOut() {
-    // props.setLogIn(false)
     localStorage.clear();
     navigate('/');
     window.location.reload(false);//refresh page
@@ -44,7 +43,7 @@ function MyNavbar(props) {
               marginRight: "1rem",
               marginTop: "0.5rem"
             }}>Home</NavLink>
-            
+
             <NavDropdown title="Pictures" id="basic-nav-dropdown" >
               <NavDropdown.Item >
                 <NavLink to='/searchPictures' style={{
@@ -60,7 +59,7 @@ function MyNavbar(props) {
                   marginRight: "1rem",
                   marginTop: "0.5rem"
                 }}>Upload Pictures</NavLink>
-            </NavDropdown.Item>
+              </NavDropdown.Item>
             </NavDropdown>
 
             <NavLink to='/checklist' style={{
@@ -70,7 +69,7 @@ function MyNavbar(props) {
               marginTop: "0.5rem",
               marginLeft: "1rem"
             }}>Check List</NavLink>
-            
+
             <NavDropdown title="Forum" id="basic-nav-dropdown" >
               <NavDropdown.Item >
                 <NavLink to='/forum' style={{
@@ -86,28 +85,9 @@ function MyNavbar(props) {
                   marginTop: "0.5rem"
                 }}>Ask a Question</NavLink>
               </NavDropdown.Item>
-              
-
             </NavDropdown>
-            {/* <NavLink href='/searchPictures' style={{
-              color: '#678398',
-              textDecoration: "none",
-              marginRight: "1rem",
-              marginTop: "0.5rem"
-            }}>Pictures</NavLink>
-
-            <NavLink href='/' style={{
-              color: '#678398',
-              textDecoration: "none",
-              marginTop: "0.5rem"
-            }}>Forum</NavLink> */}
-
-
           </Nav>
           <Nav>
-            {/* <Navbar.Text> Welcome, Mark Otto </Navbar.Text> */}
-            {/* <Button className='loginButton' variant="outline-primary" href='/login'>Login</Button>{' '}
-            <Button className='signupButton' variant="primary" href='/signup'>Sign-up</Button>{' '} */}
             {navbarRight}
           </Nav>
         </Navbar.Collapse>
