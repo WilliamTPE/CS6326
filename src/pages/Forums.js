@@ -37,11 +37,11 @@ export default function Forum() {
     return (
         <ThemeProvider theme={theme}>
             <Container style={{marginTop:'2rem', marginBottom:'10rem'}}>
-                <Grid container spacing={2}>
-                    <Grid xs={3}>
+                <Grid container spacing={{xs:2, md:3}} columns={{xs:4, sm:8, md:12}}>
+                    <Grid item xs={3}>
                         <SideBar />
                     </Grid>
-                    <Grid xs={9}>
+                    <Grid item xs={9}>
                         <QuestionList />
                     </Grid>
                 </Grid>

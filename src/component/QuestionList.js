@@ -23,7 +23,7 @@ export default function QuestionList() {
     return (
         <Box sx={{ m: 2 }}>
             <Box display="grid" sx={{ display: "flex", my:1, py:2}}>
-                <Typography variant="h4" sx={{ flexGrow: 1 }}>
+                <Typography sx={{ flexGrow: 1, typography: { sm: 'h4', xs: 'h5' } }}>
                     All Questions
                 </Typography>
                 <Link to={"/question/ask"} style={{textDecoration: 'none'}}>
