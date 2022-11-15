@@ -75,7 +75,7 @@ function CheckListPage(){
         <Container className='listPageContainer'>
         <div className="row justify-content-center" >
             <h2 className='list-heading' style={{marginTop:'4rem'} }> We provide specified self-check lists for variant homes. </h2>
-            <h2 className='list-heading' > Please select your future home specification. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h2>
+            <h2 className='list-heading' > Please select your future home specification. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h2>
         </div>
         <div className="row justify-content-center" >
             <div className="col-lg-3">

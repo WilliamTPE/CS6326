@@ -129,7 +129,7 @@ export default function QuestionDetail() {
                                                 sx={{ my: 2, py: 1 }}
                                                 type="submit"
                                                 value="Submit"
-                                            >Post Answer</Button>
+                                            >Post Comment</Button>
                                         </form>
                                     </Box>
                                 </Box>
