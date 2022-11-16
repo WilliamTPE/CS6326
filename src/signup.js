@@ -56,7 +56,7 @@ function SignUpPage(){
             confirm.classList.remove("error");
         }
     })
-    function submitForm(){
+    function submitForm(e){
         //---submission validation---
         var form = document.getElementById("myForm");
         form.onsubmit = function(e){
@@ -83,15 +83,15 @@ function SignUpPage(){
                 flag = false;
                 e.preventDefault();
             }
-            if (flag) {
+            if (flag) { //if pass the check
                 pwd.classList.remove('error');
                 confirm.classList.remove('error');
+                navigate("/");
                 window.location.reload(false);//refresh page
+                var username = document.getElementById("username").value
+                localStorage.setItem('user', JSON.stringify(username));
             }
-            var username = document.getElementById("username").value
-            localStorage.setItem('user', JSON.stringify(username));
-            navigate("/");
-            window.location.reload(false);//refresh page
+
             return flag;
         }
     }
