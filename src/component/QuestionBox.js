@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Chip, Stack, Typography} from "@mui/material";
+import {Box, Chip, Stack, Typography, Divider} from "@mui/material";
 import { Link } from "react-router-dom";
 
 export default function QuestionBox({id, title, description, tag}) {
@@ -23,6 +23,7 @@ export default function QuestionBox({id, title, description, tag}) {
                     );
                 })}
             </Stack>
+            <Divider sx={{ py:1, borderColor: 'black'}}/>
         </Box>
     );
 }
