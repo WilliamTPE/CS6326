@@ -132,7 +132,20 @@ export default function SearchPic(props) {
         setNumPages(Math.ceil(newdata.length / pageLimit))
         setCurPage(0)
         setDisplay(searchDisplay)
-        setFilter(searchDisplay[0]);
+        if(searchDisplay[0] == null){
+            setFilter(
+                <h3>"No result found on this address."</h3>
+            )
+        }else{
+            setFilter(searchDisplay[0]);
+        }
+    }
+
+    //use enter as click
+    function handleEnterPress(e){
+        if (e.key === 'Enter') {
+            handleSearch();
+          }
     }
 
     return (
@@ -140,15 +153,16 @@ export default function SearchPic(props) {
             <div className="toppart">
                 <h3 className="title">Find a House</h3>
                 <h6>What houses are you going to visit recently, find out the real looking.</h6>
-                <div className="searchpart">
+                <div id='searchContent' className="searchpart">
                     <input className='searchInput' type="text"
                         placeholder="Search for the address..."
                         onChange={handleChange}
                         name="address"
                         value={address}
+                        onKeyDown={handleEnterPress} 
                     >
                     </input>
-                    <img className='click-search' src="/img/searchbar.png" alt="a logo" onClick={handleSearch} />
+                    <img id="searchButton" className='click-search' src="/img/searchbar.png" alt="a logo" onClick={handleSearch}/>
                     <img className='cancel-search' src="/img/cross.png" alt="a logo" onClick={resetClick} />
                 </div>
                 <h4 className="upload-word">Visited a house recently? Share your experience with others</h4>

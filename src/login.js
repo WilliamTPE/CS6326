@@ -37,7 +37,7 @@ function LoginPage() {
         pwdHintMsg.style.display = "none"; 
         if(pwd.length < 6){
             pwdHintMsg.style.display = "block";
-            pwdHintMsg.textContent = "Please enter a valid password!"
+            pwdHintMsg.textContent = "Please enter a valid password, which is at least 6-character long!"
             e.preventDefault();
         }
         if(username.length >= 1 && pwd.length >= 6){
