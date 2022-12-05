@@ -53,11 +53,10 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    padding: 0px;
     gap: 8px;
     width: 811px;
     height: 80px;
-    
+    margin-top: 0px;
 }
  
 
