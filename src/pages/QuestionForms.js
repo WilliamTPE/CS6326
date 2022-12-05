@@ -22,9 +22,6 @@ import { collection, addDoc, Timestamp } from 'firebase/firestore';
 const theme = createTheme({
     palette: {
         primary: {
-            main: "#363F59"
-        },
-        secondary: {
             main: "#6A79A6"
         }
     }

@@ -11,7 +11,7 @@ import CommentContent from "../component/CommentContent";
 const theme = createTheme({
     palette: {
         primary: {
-            main: "#363F59"
+            main: "#6A79A6"
         },
     }
 });

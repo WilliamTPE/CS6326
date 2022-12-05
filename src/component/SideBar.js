@@ -27,7 +27,7 @@ export default function SideBar() {
     return (
         <Box sx={{P: 1}}>
             <Box sx={{p: 2}}>
-                <Button variant="contained" color="primary" onClick={goBack}>Go Back</Button>
+                {/* <Button variant="contained" color="primary" onClick={goBack}>Go Back123</Button> */}
             </Box>
             <Box sx={{p: 2}}>
                 <Typography variant="h6" gutterBottom>

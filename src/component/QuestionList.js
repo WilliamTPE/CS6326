@@ -5,7 +5,7 @@ import {db} from '../firebaseSetup/firebase';
 import QuestionBox from "./QuestionBox";
 import { Link } from "react-router-dom";
 
-export default function QuestionList() {
+export default function QuestionList(props) {
     const [questions, setQuestions] = useState([]);
 
     /** function to get all questions from firestore in realtime **/
@@ -18,6 +18,17 @@ export default function QuestionList() {
             })))
         })
     },[])
+
+    console.log("text" + props.searchItem);
+    const searchResult = [];
+
+    
+    questions.forEach((question) => {
+        if (question.data.title.toLowerCase().indexOf(props.searchItem.toLowerCase()) === -1 ){
+            return
+        }
+        searchResult.push(question);
+    })
 
 
     return (
@@ -32,7 +43,7 @@ export default function QuestionList() {
             </Box>
             <Divider sx={{ border: 1 }}/>
 
-            {questions.map((question) => (
+            {searchResult.map((question) => (
                 <QuestionBox
                     id = {question.id}
                     key = {question.id}
