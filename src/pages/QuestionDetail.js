@@ -59,11 +59,17 @@ export default function QuestionDetail() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
+            if(comment === ''){
+                alert('Comment cannot be empty')
+            } else {
+
+            
             await addDoc(collection(db, 'comments'), {
                 comment: comment,
                 questionId: id,
                 created: Timestamp.now()
             });
+            }
         } catch (err) {
             alert(err)
         }
