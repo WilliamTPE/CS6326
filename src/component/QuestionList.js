@@ -33,16 +33,6 @@ export default function QuestionList(props) {
 
     return (
         <Box sx={{ m: 2 }}>
-            <Box display="grid" sx={{ display: "flex", my:1, py:2}}>
-                <Typography sx={{ flexGrow: 1, typography: { sm: 'h4', xs: 'h5' } }}>
-                    All Questions
-                </Typography>
-                <Link to={"/question/ask"} style={{textDecoration: 'none'}}>
-                    <Button variant="contained" color="primary">Ask Question</Button>
-                </Link>
-            </Box>
-            <Divider sx={{ border: 1 }}/>
-
             {searchResult.map((question) => (
                 <QuestionBox
                     id = {question.id}
@@ -52,10 +42,6 @@ export default function QuestionList(props) {
                     tag = {question.data.tag}
                 />
             ))}
-
-            {/* <Box sx={{p:3, justifyContent: 'center', display: 'flex',}}>
-                <Pagination count={10} />
-            </Box> */}
         </Box>
     );
 }
