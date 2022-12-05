@@ -15,6 +15,7 @@ import Upload from './Upload.js'
 import Forum from "./pages/Forums";
 import QuestionForms from "./pages/QuestionForms";
 import QuestionDetail from "./pages/QuestionDetail";
+import HelpPage from './helpPage';
 
 function App() {
   const [logged, setLogged] = useState(false)
@@ -44,6 +45,7 @@ function App() {
         <Route exact path="/forum" element={<Forum/>}/>
         <Route path="/question/ask" element={<QuestionForms/>} />
         <Route path="/question/:id" element={<QuestionDetail/>} />
+        <Route path='/help' element={<HelpPage/>}></Route>
       </Routes>
       {/* <FooterPage /> */}
       <FooterPage /> 

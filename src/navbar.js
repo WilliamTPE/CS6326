@@ -86,6 +86,14 @@ function MyNavbar(props) {
                 }}>Ask a Question</NavLink>
               </NavDropdown.Item>
             </NavDropdown>
+
+            <NavLink to='/help' style={{
+              color: '#678398',
+              textDecoration: "none",
+              marginRight: "1rem",
+              marginTop: "0.5rem",
+              marginLeft: "1rem"
+            }}>Help</NavLink>
           </Nav>
           <Nav>
             {navbarRight}
