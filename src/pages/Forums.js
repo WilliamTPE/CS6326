@@ -42,8 +42,8 @@ export default function Forum() {
         <ThemeProvider theme={theme}>
             <Container style={{ marginTop: '2rem', marginBottom: '10rem' }}>
                 <Grid container>
-                    <Grid item container xs={12} spacing={2} justifyContent="center">
-                        <Grid item xs={12} md={9}>
+                    <Grid item container xs={12} spacing={2} justifyContent="flex-end" alignItems="center">
+                        <Grid item xs={12} md={8} >
                             <TextField
                                 id="forum-search"
                                 label="Search"
@@ -62,7 +62,7 @@ export default function Forum() {
                                 onChange={(event) => setSearchItem(event.target.value)}
                             />
                         </Grid>
-                        <Grid item xs={12} md={3}>
+                        <Grid item xs={12} md={1}>
                                 <Button
                                     variant="contained"
                                     fullWidth
