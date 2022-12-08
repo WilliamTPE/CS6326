@@ -103,7 +103,7 @@ export default function Upload(props) {
 
         if (username.length < 1) {
             usernameHintMsg.style.display = "block";
-            usernameHintMsg.textContent = "Please enter house address!"
+            usernameHintMsg.textContent = "*Please enter house address!"
             e.preventDefault();
         }
         var pwdHintMsg = document.getElementById("inputTagHint")
