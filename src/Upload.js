@@ -18,7 +18,7 @@ export default function Upload(props) {
             added: false,
             checkaddress1: false,
             checkpic: false,
-            checksize: false
+            // checksize: false
         }
     )
 
@@ -43,39 +43,90 @@ export default function Upload(props) {
         })
 
     }
-
+    console.log(formData)
     function handleChange(event) {
         let update = []
         const { name, value } = event.target
         if (name === "addressLine1" && value != 0) {
             update = { checkaddress1: true }
         }
-        let update1 = []
-        if (name === "size" && value != 0) {
-            update1 = { checksize: true }
-        }
+
 
         setFormData(prevFormData => {
             return {
                 ...prevFormData,
                 [name]: value,
                 ...update,
-                ...update1
+
             }
         })
 
     }
     console.log(formData)
     function handleButton(e) {
-        props.formdata(formData)
 
-        if (formData.checkaddress1 === false || formData.checkpic === false) {
-            alert("Please fill out required area")
-            e.preventDefault()
+
+        // if (formData.checkaddress1 === false || formData.checkpic === false) {
+        //     alert("Please fill out required area")
+        //     e.preventDefault()
+        // }
+
+        // if (formData.checkaddress1 === true && formData.checkpic === true) {
+        //     props.formdata(formData)
+        //     navigate('/searchPictures')
+        // }
+
+        var user = document.getElementById("ad1");
+        var span = document.createElement("span");
+        span.setAttribute("id", "ad1Hint");
+        span.style.display = "none";
+        user.parentNode.appendChild(span);
+        //pwd
+        var pwd = document.getElementById("inputTag");
+        var span2 = document.createElement("span");
+        span2.setAttribute("id", "inputTagHint");
+        span2.style.display = "none";
+        pwd.parentNode.appendChild(span2);
+
+        var sizechange = document.getElementById("sizeid");
+        var span3 = document.createElement("span");
+        span3.setAttribute("id", "sizeHint");
+        span3.style.display = "none";
+        sizechange.parentNode.appendChild(span3);
+
+        var username = document.getElementById("ad1").value
+        var pwd = document.getElementById("inputTag").value
+        var sizechange = document.getElementById("sizeid").value
+        // localStorage.setItem('user', JSON.stringify(username));
+        var usernameHintMsg = document.getElementById("ad1Hint")
+        usernameHintMsg.style.display = "none";
+
+        if (username.length < 1) {
+            usernameHintMsg.style.display = "block";
+            usernameHintMsg.textContent = "Please enter house address!"
+            e.preventDefault();
+        }
+        var pwdHintMsg = document.getElementById("inputTagHint")
+        pwdHintMsg.style.display = "none";
+        console.log(pwd.length)
+        if (pwd.length < 1) {
+            pwdHintMsg.style.display = "block";
+            pwdHintMsg.textContent = "*Please upload at least one photo!"
+            e.preventDefault();
         }
 
-        if (formData.checkaddress1 === true && formData.checkpic === true) {
-            navigate('/searchPictures')
+        var sizeHintMsg = document.getElementById("sizeHint")
+        sizeHintMsg.style.display = "none";
+
+        if (sizechange.length < 1) {
+            sizeHintMsg.style.display = "block";
+            sizeHintMsg.textContent = "*Please input the house size!"
+            e.preventDefault();
+        }
+        if (username.length >= 1 && pwd.length >= 1 && sizechange.length >= 1) {
+            props.formdata(formData)
+            navigate('/searchPictures');
+            // window.location.reload(false);//refresh page
         }
 
     }
@@ -119,7 +170,7 @@ export default function Upload(props) {
                             />
 
                         </div>
-                        {!formData.checkaddress1 && <p>*Please enter address</p>}
+                        {/* {!formData.checkaddress1 && <p>*Please enter address</p>} */}
                         <div className='upload-add'>
                             <h4>Address Line 2</h4>
                             <input
@@ -152,10 +203,10 @@ export default function Upload(props) {
                                 onChange={handleChange}
                                 name="size"
                                 value={formData.size}
-
+                                id="sizeid"
                             />
                         </div>
-                        {!formData.checksize && <p>*Please enter house size</p>}
+                        {/* {!formData.checksize && <p>*Please enter house size</p>} */}
                         <div className='upload-add'>
                             <h4>Pictures</h4>
                             <input
@@ -178,7 +229,7 @@ export default function Upload(props) {
 
                             </label>
                         </div>
-                        {!formData.checkpic && <p>*Please select pictures</p>}
+                        {/* {!formData.checkpic && <p>*Please select pictures</p>} */}
                         <button className="upload-button" onClick={handleButton}>Upload </button>
 
                     </form>
