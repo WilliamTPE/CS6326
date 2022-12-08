@@ -65,17 +65,6 @@ export default function Upload(props) {
     console.log(formData)
     function handleButton(e) {
 
-
-        // if (formData.checkaddress1 === false || formData.checkpic === false) {
-        //     alert("Please fill out required area")
-        //     e.preventDefault()
-        // }
-
-        // if (formData.checkaddress1 === true && formData.checkpic === true) {
-        //     props.formdata(formData)
-        //     navigate('/searchPictures')
-        // }
-
         var user = document.getElementById("ad1");
         var span = document.createElement("span");
         span.setAttribute("id", "ad1Hint");
@@ -94,13 +83,20 @@ export default function Upload(props) {
         span3.style.display = "none";
         sizechange.parentNode.appendChild(span3);
 
+        var typechange = document.getElementById("type");
+
+        var span4 = document.createElement("span");
+        span4.setAttribute("id", "typeHint");
+        span4.style.display = "none";
+        typechange.parentNode.appendChild(span4);
+
         var username = document.getElementById("ad1").value
         var pwd = document.getElementById("inputTag").value
         var sizechange = document.getElementById("sizeid").value
-        // localStorage.setItem('user', JSON.stringify(username));
+        var typechange = document.getElementById("type").value
+
         var usernameHintMsg = document.getElementById("ad1Hint")
         usernameHintMsg.style.display = "none";
-
         if (username.length < 1) {
             usernameHintMsg.style.display = "block";
             usernameHintMsg.textContent = "*Please enter house address!"
@@ -108,7 +104,6 @@ export default function Upload(props) {
         }
         var pwdHintMsg = document.getElementById("inputTagHint")
         pwdHintMsg.style.display = "none";
-        console.log(pwd.length)
         if (pwd.length < 1) {
             pwdHintMsg.style.display = "block";
             pwdHintMsg.textContent = "*Please upload at least one photo!"
@@ -117,13 +112,22 @@ export default function Upload(props) {
 
         var sizeHintMsg = document.getElementById("sizeHint")
         sizeHintMsg.style.display = "none";
-
         if (sizechange.length < 1) {
             sizeHintMsg.style.display = "block";
             sizeHintMsg.textContent = "*Please input the house size!"
             e.preventDefault();
         }
-        if (username.length >= 1 && pwd.length >= 1 && sizechange.length >= 1) {
+
+        var typeHintMsg = document.getElementById("typeHint")
+        typeHintMsg.style.display = "none";
+        if (typechange === "") {
+            typeHintMsg.style.display = "block";
+            typeHintMsg.textContent = "*Please select house type!"
+            e.preventDefault();
+        }
+
+
+        if (username.length >= 1 && pwd.length >= 1 && sizechange.length >= 1 && typechange != "") {
             props.formdata(formData)
             navigate('/searchPictures');
             // window.location.reload(false);//refresh page
