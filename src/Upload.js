@@ -208,6 +208,7 @@ export default function Upload(props) {
                                 name="size"
                                 value={formData.size}
                                 id="sizeid"
+                                type="number" min="0"
                             />
                         </div>
                         {/* {!formData.checksize && <p>*Please enter house size</p>} */}
