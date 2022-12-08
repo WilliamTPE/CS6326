@@ -43,7 +43,6 @@ export default function Upload(props) {
         })
 
     }
-    console.log(formData)
     function handleChange(event) {
         let update = []
         const { name, value } = event.target
@@ -203,7 +202,6 @@ export default function Upload(props) {
                         <div className='upload-add'>
                             <h4>Size</h4>
                             <input
-                                type="text"
                                 onChange={handleChange}
                                 name="size"
                                 value={formData.size}
