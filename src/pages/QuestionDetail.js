@@ -41,6 +41,7 @@ export default function QuestionDetail() {
         onSnapshot(questionContent, (doc) => {
             const data = doc.data();
             setContent(data);
+
         })
     }, [id]);
 
@@ -48,6 +49,7 @@ export default function QuestionDetail() {
     useEffect(() => {
         const commentColRef = query(collection(db, 'comments'), where('questionId', '==', id));
         onSnapshot(commentColRef, (snapshot) => {
+            console.log(snapshot.doc)
             setComments(snapshot.docs.map(doc => ({
                 id: doc.id,
                 data: doc.data()
@@ -59,16 +61,18 @@ export default function QuestionDetail() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            if(comment === ''){
+            if (comment.includes("<br>")) {
+                //console.log(comment)
                 alert('Comment cannot be empty')
-            } else {
+            }
+            else {
 
-            
-            await addDoc(collection(db, 'comments'), {
-                comment: comment,
-                questionId: id,
-                created: Timestamp.now()
-            });
+
+                await addDoc(collection(db, 'comments'), {
+                    comment: comment,
+                    questionId: id,
+                    created: Timestamp.now()
+                });
             }
         } catch (err) {
             alert(err)
@@ -84,7 +88,7 @@ export default function QuestionDetail() {
             ["link", "image"]
         ]
     };
-
+    console.log(comment.length)
     function goBack() {
         navigate('/forum')
     }
@@ -92,7 +96,7 @@ export default function QuestionDetail() {
     return (
         <ThemeProvider theme={theme}>
             <Container style={{ marginTop: '3rem', marginBottom: '30rem' }}>
-                <Grid container spacing={{xs:2, md:3}} columns={{xs:4, sm:8, md:12}} >
+                <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} >
                     <Grid item xs={2}>
                         <Button variant="contained" color="primary" onClick={goBack}>Go Back</Button>
                     </Grid>
@@ -100,11 +104,11 @@ export default function QuestionDetail() {
                         <Box display="grid" sx={{ display: "flex", m: 2 }}>
                             <Typography sx={{ flexGrow: 1, typography: { sm: 'h4', xs: 'h5' } }}>{content.title}</Typography>
                             <Link to={"/question/ask"} style={{ textDecoration: 'none' }}>
-                                <Button variant="contained" color="primary" sx={{typography: { sm: 'body1', xs: 'body2' }}}>Ask Question</Button>
+                                <Button variant="contained" color="primary" sx={{ typography: { sm: 'body1', xs: 'body2' } }}>Ask Question</Button>
                             </Link>
                         </Box>
                         <Divider sx={{ my: 2, border: 1 }} />
-                        <Grid container spacing={{xs:2, md:3}} columns={{xs:4, sm:8, md:12}}>
+                        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                             <Grid item xs={9}>
                                 <Box sx={{ p: 2 }}>
                                     <QuestionContent
